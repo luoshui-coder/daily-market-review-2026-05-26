@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>每日市场复盘｜2026-05-26</title>
+  <meta name="description" content="A股与港美股每日市场复盘：A股按最近交易日回溯，港美股按最近已收盘交易日回溯。包含 9 模块复盘、风险提示与精要总结。" />
+  <meta property="og:title" content="每日市场复盘｜2026-05-26" />
+  <meta property="og:description" content="A股复盘 + 港美股复盘的单页交付。" />
+  <meta property="og:type" content="article" />
+  <style>
+    :root{
+      --bg:#07111f;
+      --panel:#0d1a2f;
+      --panel2:#112342;
+      --text:#eaf2ff;
+      --muted:#9fb0ca;
+      --line:rgba(255,255,255,.09);
+      --accent:#7dd3fc;
+      --accent2:#a78bfa;
+      --good:#34d399;
+      --warn:#f59e0b;
+      --bad:#fb7185;
+      --chip:rgba(125,211,252,.12);
+      --shadow:0 18px 40px rgba(0,0,0,.28);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+      background:
+        radial-gradient(1200px 800px at 20% 0%, rgba(125,211,252,.16), transparent 60%),
+        radial-gradient(900px 700px at 90% 10%, rgba(167,139,250,.12), transparent 60%),
+        linear-gradient(180deg, #06101c 0%, #081427 40%, #07111f 100%);
+      color:var(--text);
+      line-height:1.65;
+    }
+    a{color:var(--accent); text-decoration:none}
+    .wrap{max-width:1240px;margin:0 auto;padding:28px 18px 40px}
+    .hero{
+      position:relative;
+      overflow:hidden;
+      background:linear-gradient(135deg, rgba(17,35,66,.95), rgba(13,26,47,.92));
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      border-radius:28px;
+      padding:30px;
+      margin-bottom:18px;
+    }
+    .kicker{display:inline-flex;gap:8px;align-items:center;font-size:13px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+    .kicker b{color:var(--accent)}
+    h1{margin:8px 0 10px;font-size:clamp(30px,4vw,52px);line-height:1.05}
+    .subtitle{color:var(--muted);max-width:900px;font-size:15px}
+    .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .chip{
+      padding:8px 12px;
+      background:var(--chip);
+      border:1px solid rgba(125,211,252,.18);
+      color:#dff6ff;
+      border-radius:999px;
+      font-size:13px;
+    }
+    .summary{
+      display:grid;
+      grid-template-columns:repeat(4, minmax(0,1fr));
+      gap:14px;
+      margin:18px 0 24px;
+    }
+    .card{
+      background:linear-gradient(180deg, rgba(17,35,66,.9), rgba(13,26,47,.92));
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:18px;
+      min-height:100%;
+    }
+    .card h3{margin:0 0 10px;font-size:15px;display:flex;align-items:center;gap:8px}
+    .card p,.card li{color:var(--muted);margin:0}
+    .meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:0 0 18px}
+    .meta .card strong{color:var(--text)}
+    .section{margin:18px 0 26px}
+    .section > .section-head{
+      display:flex;align-items:flex-end;justify-content:space-between;gap:18px;
+      margin:0 0 12px;padding:0 4px;
+    }
+    .section h2{margin:0;font-size:26px;line-height:1.2}
+    .section .tag{color:var(--muted);font-size:13px}
+    .grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+    .grid-4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+    .panel h3{margin-top:0;font-size:18px}
+    .panel ul{margin:0;padding-left:18px;color:var(--muted)}
+    .panel li{margin:8px 0}
+    .panel p{margin:10px 0;color:var(--muted)}
+    .pill{
+      display:inline-flex;align-items:center;gap:6px;
+      font-size:12px;padding:5px 10px;border-radius:999px;
+      background:rgba(167,139,250,.12);border:1px solid rgba(167,139,250,.16);color:#e6ddff;
+      margin-right:8px;margin-bottom:8px;
+    }
+    .pill.good{background:rgba(52,211,153,.12);border-color:rgba(52,211,153,.18);color:#d4fff0}
+    .pill.warn{background:rgba(245,158,11,.12);border-color:rgba(245,158,11,.18);color:#ffe8bf}
+    .pill.bad{background:rgba(251,113,133,.12);border-color:rgba(251,113,133,.18);color:#ffd0d9}
+    .list{display:flex;flex-wrap:wrap;gap:10px;color:var(--muted)}
+    .list span{background:rgba(255,255,255,.04);border:1px solid var(--line);padding:6px 10px;border-radius:12px}
+    .callout{
+      background:linear-gradient(135deg, rgba(125,211,252,.10), rgba(167,139,250,.08));
+      border:1px solid rgba(125,211,252,.18);
+      border-radius:18px;
+      padding:16px 18px;
+      color:#dff6ff;
+    }
+    .note{color:var(--muted);font-size:13px}
+    .two-col{display:grid;grid-template-columns:1.1fr .9fr;gap:14px}
+    .footer{
+      margin-top:22px;padding:16px 6px 8px;color:var(--muted);font-size:13px;text-align:center
+    }
+    .riskbox{
+      border:1px solid rgba(251,113,133,.22);
+      background:linear-gradient(180deg, rgba(251,113,133,.10), rgba(17,35,66,.72));
+    }
+    .tight p{margin:8px 0}
+    @media (max-width: 980px){
+      .summary,.grid-4,.grid-3,.grid-2,.meta,.two-col{grid-template-columns:1fr}
+      .hero{padding:22px}
+      .section h2{font-size:22px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <div class="kicker"><b>Daily Market Review</b> · Asia/Shanghai</div>
+      <h1>每日市场复盘｜2026-05-26</h1>
+      <div class="subtitle">口径说明：A股按最近一个已收盘交易日回溯至 2026-05-25；港股按最近已收盘交易日回溯至 2026-05-22（5/25 佛诞翌日休市）；美股按最近已收盘交易夜盘回溯至 2026-05-22（5/25 Memorial Day 休市）。</div>
+      <div class="chips">
+        <span class="chip">A股：半导体 / 存储 / 先进封装主导</span>
+        <span class="chip">港股：恒科弹性更强</span>
+        <span class="chip">美股：AI 与大盘权重继续托底</span>
+        <span class="chip">风险：高位分歧、交易拥挤、利率仍高</span>
+      </div>
+    </header>
+
+    <div class="summary">
+      <div class="card"><h3>精要判断</h3><p>A股是科技权重主导的结构性进攻，但个股广度没跟上；港美股则是风险偏好修复下的 AI / 半导体延续，港股弹性更强。</p></div>
+      <div class="card"><h3>最强方向</h3><p>半导体、存储芯片、先进封装、AI 算力链，A股与港股都在交易同一条产业叙事。</p></div>
+      <div class="card"><h3>主要分歧</h3><p>指数能涨，不代表全市场都在涨。A股上涨家数少于下跌家数，说明资金集中度仍高。</p></div>
+      <div class="card"><h3>最关键观察</h3><p>看成交额能否维持、龙头是否承接、南向资金是否回流，以及高位股会不会继续松动。</p></div>
+    </div>
+
+    <div class="meta">
+      <div class="card">
+        <h3>复盘口径</h3>
+        <p><strong>A股：</strong>2026-05-25。<br><strong>港股：</strong>2026-05-22。<br><strong>美股：</strong>2026-05-22。<br><strong>说明：</strong>遇到节假日回溯最近一个已收盘交易日，不硬写假数据。</p>
+      </div>
+      <div class="card">
+        <h3>风险提示</h3>
+        <p>本页只做市场复盘与节奏判断，不构成投资建议。市场有风险，交易需谨慎。</p>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>A股复盘｜2026-05-25</h2>
+        <div class="tag">9 模块完整复盘</div>
+      </div>
+      <div class="grid-2">
+        <article class="card panel">
+          <h3>1. 市场整体</h3>
+          <p>上证指数 <strong>+0.96%</strong>，深证成指 <strong>+1.66%</strong>，创业板指 <strong>+2.10%</strong>，科创50 <strong>+5.88%</strong>，北证50 <strong>-0.83%</strong>。</p>
+          <p>两市成交额 <strong>32269 亿元</strong>，较上日放量 <strong>3023 亿元</strong>。上涨 <strong>2181</strong> 家，下跌 <strong>3225</strong> 家。结论很直接：指数修复了，但广度没有同步，属于典型的结构性行情。</p>
+          <div class="pill good">结构性进攻</div><div class="pill warn">指数强、广度弱</div>
+        </article>
+        <article class="card panel">
+          <h3>2. 市场情绪</h3>
+          <p>涨停 <strong>128</strong> 家，跌停 <strong>24</strong> 家，炸板 <strong>50</strong> 家，炸板率 <strong>28%</strong>。最高板是 <strong>四环生物 4 连板</strong>，其次是 <strong>恒林股份 3 连板</strong>。</p>
+          <p>情绪不是冰点，也谈不上无脑高潮，更像是“强方向发酵后，高位开始分歧”的状态。能打板，但接力门槛不低。</p>
+          <div class="pill warn">高位分歧</div><div class="pill good">修复中带分化</div>
+        </article>
+      </div>
+
+      <div class="grid-2" style="margin-top:14px;">
+        <article class="card panel">
+          <h3>3. 涨停结构</h3>
+          <p>连板梯队以 <strong>2-4 板</strong> 为主，说明市场还在试错与扩散，尚未形成一眼就能确认的超级主线。</p>
+          <p>低位题材与板块轮动同时存在，首板数量虽然不少，但真正能形成梯队的仍然集中在半导体、存储、先进封装和部分高辨识度高标。</p>
+          <div class="list"><span>四环生物 4 板</span><span>恒林股份 3 板</span><span>18 只 2 连板</span></div>
+        </article>
+        <article class="card panel">
+          <h3>4. 主线题材</h3>
+          <p><strong>半导体 / 存储芯片 / 先进封装：</strong>这是当天最像真主线的方向。芯片概念净流入 <strong>388.95 亿</strong>，存储芯片净流入 <strong>217.58 亿</strong>，中国 AI 50 净流入 <strong>167.22 亿</strong>。</p>
+          <p><strong>为什么重要：</strong>资金集中度高，板块内涨停数量多，且叠加“国产存储 IPO 提速”“先进封装/玻璃基板合作”“AI 算力链估值重估”三重叙事。</p>
+          <p><strong>代表股：</strong>京东方 A、兆易创新、风华高科、中芯国际。</p>
+          <div class="pill good">真主线候选</div>
+        </article>
+      </div>
+
+      <div class="grid-3" style="margin-top:14px;">
+        <article class="card panel">
+          <h3>5. 热门个股</h3>
+          <p><strong>容量核心：</strong>京东方 A 一字涨停，封单金额超百亿元；兆易创新盘中创新高后回落，说明资金在高位开始挑拣。</p>
+          <p><strong>情绪高标：</strong>四环生物 4 连板、恒林股份 3 连板。</p>
+          <p><strong>风险反馈：</strong>合肥城建午后跌停，说明“影子股”炒作切换很快，追涨容错率低。</p>
+        </article>
+        <article class="card panel">
+          <h3>6. 机构 / 消息催化</h3>
+          <p>京东方 A 与康宁签署合作备忘录，覆盖玻璃基封装载板、可折叠玻璃、钙钛矿玻璃基板和光互连。这个消息直接把先进封装和显示链条一起点燃了。</p>
+          <p>市场继续交易国产存储与晶圆链的估值重估，长鑫科技、长江存储相关叙事继续发酵，但后排更偏轮动，不是全线确认。</p>
+          <p>验证结论：<strong>强验证</strong>。但强的是资金反应，不代表商业兑现已被完全验证。</p>
+        </article>
+        <article class="card panel">
+          <h3>7. 盘面判断</h3>
+          <p>今天市场本质是在交易“科技国产化 + AI 基础设施”的估值重定价，权重股负责搭台，半导体与存储负责唱戏。</p>
+          <p>当前状态：<strong>结构性进攻 + 高位分歧</strong>。不是普涨，也不是退潮；更像资金在高波动里继续押注最容易被叙事放大的方向。</p>
+        </article>
+      </div>
+
+      <div class="grid-2" style="margin-top:14px;">
+        <article class="card panel">
+          <h3>8. 明日观察</h3>
+          <ul>
+            <li>成交额能否继续站稳 <strong>3 万亿</strong> 以上，若缩量，主线持续性会打折。</li>
+            <li>京东方 A、兆易创新、中芯国际等核心股能否继续承接，决定主线是不是继续扩散。</li>
+            <li>四环生物、恒林股份等高标是否继续给出正反馈，决定接力情绪能不能延续。</li>
+            <li>若炸板率继续抬升、跌停扩大，说明高位风险开始外溢。</li>
+          </ul>
+        </article>
+        <article class="card panel">
+          <h3>9. 复盘总结</h3>
+          <p><strong>一句话：</strong>A股仍在交易科技主线，但市场不是全面开花，而是高集中度的结构性进攻。</p>
+          <p>如果明天量能和龙头承接继续跟上，这条主线还能往前走；如果高标松动、炸板扩大，就要把它看成高位分歧后的轮动，而不是无限延伸的强趋势。</p>
+          <p class="note">风险提示：以上内容仅为市场复盘，不构成投资建议。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>港美股复盘｜2026-05-22</h2>
+        <div class="tag">港股 5/25 休市；美股 5/25 休市</div>
+      </div>
+
+      <div class="grid-2">
+        <article class="card panel">
+          <h3>1. 宏观背景</h3>
+          <p>10Y 美债收益率约 <strong>4.563%</strong>，美元指数 <strong>95.64</strong>，VIX <strong>16.70</strong>。利率仍然不算友好，但波动率回落，说明风险偏好并没有继续恶化。</p>
+          <p>对港股来说，利率、美元和南向资金仍是关键变量；对美股来说，AI 资本开支和大盘权重的业绩兑现，继续压过单纯的宏观噪音。</p>
+          <div class="pill warn">利率压制成长</div><div class="pill good">VIX 回落</div>
+        </article>
+        <article class="card panel">
+          <h3>2. 指数表现</h3>
+          <p>美股：道指 <strong>+0.58%</strong> 至 50579.70，标普500 <strong>+0.37%</strong> 至 7473.47，纳指 <strong>+0.19%</strong> 至 26343.97，罗素2000 <strong>0.00%</strong> 至 2869.23。</p>
+          <p>港股：恒指 <strong>+0.86%</strong> 至 25606.03，恒生国企指数 <strong>+0.89%</strong> 至 8550.87，恒生科技指数 <strong>+2.11%</strong> 至 4869.57。港股的弹性明显强于美股主指数。</p>
+          <div class="pill good">港股高弹性反弹</div><div class="pill warn">指数强、广度弱</div>
+        </article>
+      </div>
+
+      <div class="grid-2" style="margin-top:14px;">
+        <article class="card panel">
+          <h3>3. 市场风格</h3>
+          <p>美股更像 <strong>科技权重驱动</strong> 的窄幅上行，纳指涨得不算猛，但 AI 交易逻辑还在；罗素2000没跟上，说明并不是全面 risk-on。</p>
+          <p>港股则是 <strong>风险偏好修复 + 中概/恒科弹性反弹</strong>，但南向资金并没有无条件追高，风格更像“有弹性，但仍挑资产”。</p>
+        </article>
+        <article class="card panel">
+          <h3>4. 板块主线</h3>
+          <p><strong>港股主线：</strong>科技服务、半导体、互联网与金融权重共同修复。科技服务指数单日 <strong>+12.6%</strong>，中芯国际涨 <strong>7.6%</strong>，联想涨 <strong>19.8%</strong>，腾讯控股涨 <strong>0.6%</strong>，汇丰涨 <strong>1.55%</strong>，港交所涨 <strong>0.44%</strong>。</p>
+          <p><strong>美股主线：</strong>AI / 半导体 / 大盘权重继续围绕财报与资本开支交易，Magnificent Seven 仍是定价中枢。</p>
+          <p><strong>持续性判断：</strong>港股是<strong>重点观察</strong>，美股是<strong>财报驱动下的延续修复</strong>。</p>
+        </article>
+      </div>
+
+      <div class="grid-3" style="margin-top:14px;">
+        <article class="card panel">
+          <h3>5. 核心个股</h3>
+          <p><strong>美股科技权重：</strong>Nvidia、Microsoft、Alphabet、Amazon、Meta、Tesla 仍是市场的核心锚点，AI 相关资本开支继续决定估值中枢。</p>
+          <p><strong>半导体 / AI 链：</strong>Nvidia、Broadcom、AMD、台积电 ADR 是最核心的交易链条。</p>
+        </article>
+        <article class="card panel">
+          <h3>港股核心</h3>
+          <p>腾讯控股 <strong>+0.6%</strong>、中芯国际 <strong>+7.6%</strong>、联想集团 <strong>+19.8%</strong>、汇丰控股 <strong>+1.55%</strong>、港交所 <strong>+0.44%</strong>。</p>
+          <p>这组名字说明港股不是单纯炒概念，而是“科技弹性 + 金融权重 + AI 叙事”一起修复。</p>
+        </article>
+        <article class="card panel">
+          <h3>风险反馈</h3>
+          <p>南向资金当日 <strong>净卖出近 65 亿港元</strong>，说明情绪修复里仍有兑现盘。港股上行不是没有弹性，而是资金并不算特别坚决。</p>
+          <p>美股方面，纳指上涨但罗素几乎没动，说明市场仍集中在少数龙头。</p>
+        </article>
+      </div>
+
+      <div class="grid-2" style="margin-top:14px;">
+        <article class="card panel">
+          <h3>6. 中概 / 港股映射</h3>
+          <p>映射强度：<strong>强映射</strong>，但不是简单复制。美股 AI 与大盘权重的强势，会顺着估值与情绪传导到港股科技服务与半导体；港股自己的弹性更大，回撤也更快。</p>
+          <p>这轮映射的关键不是“美股涨了港股就跟涨”，而是：AI 资本开支、半导体景气、南向资金和人民币预期能不能一起配合。</p>
+        </article>
+        <article class="card panel">
+          <h3>7. 消息 / 财报催化</h3>
+          <p>美股：大型科技财报继续给 AI 交易提供支撑，市场仍愿意为资本开支与盈利兑现买单。</p>
+          <p>港股：5/22 当天恒指反弹，主要靠科技服务、半导体和金融股；同时香港本地通胀保持稳定，给情绪一点缓冲。</p>
+          <p>验证结论：<strong>强验证</strong>，但强在“资金愿意买”，不代表波动会消失。</p>
+        </article>
+      </div>
+
+      <div class="grid-2" style="margin-top:14px;">
+        <article class="card panel">
+          <h3>8. 盘面判断</h3>
+          <p>市场本质上在交易两件事：一是美股 AI / 大盘权重的盈利与资本开支持续性，二是港股中概与恒科的弹性修复。</p>
+          <p>当前状态更接近 <strong>风格再平衡</strong>：不是全面 risk-on，而是科技权重驱动的修复，同时港股比美股更具弹性，但南向资金并不算火力全开。</p>
+        </article>
+        <article class="card panel">
+          <h3>9. 下一交易日观察与总结</h3>
+          <ul>
+            <li>10Y 美债、美元指数和 VIX 是否继续给成长和风险资产喘息空间。</li>
+            <li>Nvidia / Broadcom / AMD 等 AI 链能否继续稳住情绪锚点。</li>
+            <li>恒生科技能否继续跑赢恒指，以及南向资金是否从净卖出转向平衡。</li>
+            <li>港股科技服务与半导体是否从单日修复走成连续性结构。</li>
+          </ul>
+          <p><strong>总结：</strong>港美股并不是全面加速的风险偏好行情，而是 AI 与科技权重驱动的再定价。港股弹性更强，但也更依赖资金配合。</p>
+          <p class="note">风险提示：以上内容仅为市场复盘，不构成投资建议。</p>
+        </article>
+      </div>
+    </section>
+
+    <div class="card riskbox tight">
+      <h3>风险提示</h3>
+      <p>市场复盘只用于观察节奏、结构和风险边界，不构成投资建议。高位分歧、交易拥挤和宏观利率扰动，都会让短线波动明显放大。</p>
+    </div>
+
+    <div class="footer">每日市场复盘｜2026-05-26 · 不构成投资建议 · 数据口径按最近已收盘交易日回溯</div>
+  </div>
+</body>
+</html>
